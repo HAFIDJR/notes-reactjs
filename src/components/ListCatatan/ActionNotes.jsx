@@ -12,6 +12,7 @@ function ActionNotes({ id, onDelete, onArsip }) {
       >
         Arsipkan
       </button>
+      {/* button */}
     </div>
   );
 }
