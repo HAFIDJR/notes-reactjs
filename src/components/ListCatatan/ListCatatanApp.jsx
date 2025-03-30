@@ -1,17 +1,22 @@
 import React from "react";
-import { getInitialData } from "../../utils/index";
+import { getAllNotes } from "../../utils/index";
 import ListTitle from "./ListTitle";
 import ActiveNotesList from "./ActiveNotesList";
 import NoteFormInput from "../FormCatatan/NoteFormInput";
 import NoteArchiveTitle from "../ArsipCatatan/NoteArchiveTitle";
 import ActiveNotesArchiveList from "../ArsipCatatan/ActiveNotesArchiveList";
 import SearchInput from "../Navigation/SearchInput";
+import HomePage from "../../pages/HomePage";
+import AddPage from "../../pages/AddPage";
+import { Route, Routes } from "react-router-dom";
+import NavigationNotes from "../Navigation/Navigation";
+import DetailNoteWrapper from "../../pages/DetailNotePage";
 
 class ListCatatanApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      catatan: getInitialData(),
+      catatan: getAllNotes(),
       judul: "",
       catatanUpdate: [],
     };
@@ -92,11 +97,7 @@ class ListCatatanApp extends React.Component {
   render() {
     return (
       <div>
-        <SearchInput
-          judul={this.state.judul}
-          onJudulSearchChange={this.onJudulSearchChange}
-        />
-        <div className="note-app__body">
+        {/* <div className="note-app__body">
           <NoteFormInput addCatatan={this.onAddCatatanHandler} />
           <ListTitle />
           <ActiveNotesList
@@ -110,7 +111,15 @@ class ListCatatanApp extends React.Component {
             onDelete={this.onDeleteCatatan}
             onArsip={this.onArsipCatatan}
           />
-        </div>
+        </div> */}
+        <NavigationNotes />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/add" element={<AddPage />} />
+            <Route path="/note/:id" element={<DetailNoteWrapper />} />
+          </Routes>
+        </main>
       </div>
     );
   }
