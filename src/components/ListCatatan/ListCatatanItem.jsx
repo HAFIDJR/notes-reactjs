@@ -5,7 +5,12 @@ import ActionNotes from "./ActionNotes";
 function ListCatatanItem({ id, body, createdAt, title, onArsip, onDelete }) {
   return (
     <div className="note-item ">
-      <ActiveNotesBody body={body} createdAt={createdAt} title={title} />
+      <ActiveNotesBody
+        id={id}
+        body={body}
+        createdAt={createdAt}
+        title={title}
+      />
       <ActionNotes id={id} onArsip={onArsip} onDelete={onDelete} />
     </div>
   );
