@@ -11,6 +11,7 @@ import AddPage from "../../pages/AddPage";
 import { Route, Routes } from "react-router-dom";
 import NavigationNotes from "../Navigation/Navigation";
 import DetailNoteWrapper from "../../pages/DetailNotePage";
+import ArsipPage from "../../pages/ArsipPage";
 
 class ListCatatanApp extends React.Component {
   constructor(props) {
@@ -45,7 +46,6 @@ class ListCatatanApp extends React.Component {
   }
 
   onDeleteCatatan(id) {
-    console.log(this.state.catatan.length);
     let catatan = this.state.catatan.filter((data) => {
       return data.id != id;
     });
@@ -118,6 +118,7 @@ class ListCatatanApp extends React.Component {
             <Route path="/" element={<HomePage />} />
             <Route path="/add" element={<AddPage />} />
             <Route path="/note/:id" element={<DetailNoteWrapper />} />
+            <Route path="/arsip" element={<ArsipPage />} />
           </Routes>
         </main>
       </div>

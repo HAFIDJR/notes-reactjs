@@ -2,7 +2,7 @@ import React from "react";
 import ActiveNotesBody from "../ListCatatan/ActiveNotesBody";
 import ActionNotes from "../ListCatatan/ActionNotes";
 
-function CatatanDetail({ id, title, body, createdAt }) {
+function CatatanDetail({ id, title, body, createdAt, onArsip, onDelete }) {
   return (
     <div className="note-item ">
       <ActiveNotesBody
@@ -11,7 +11,7 @@ function CatatanDetail({ id, title, body, createdAt }) {
         createdAt={createdAt}
         title={title}
       />
-      {/* <ActionNotes id={id} onArsip={onArsip} onDelete={onDelete} /> */}
+      <ActionNotes id={id} onArsip={onArsip} onDelete={onDelete} />
     </div>
   );
 }

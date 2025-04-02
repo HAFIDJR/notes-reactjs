@@ -12,8 +12,7 @@ function ListCatatanArchiveItem({
 }) {
   return (
     <div className="note-item ">
-      <ActiveArchiveNotesBody body={body} createdAt={createdAt} title={title} />
-      <ActionArchiveNotes id={id} onArsip={onArsip} onDelete={onDelete} />
+      <ActiveArchiveNotesBody id={id} body={body} createdAt={createdAt} title={title} />
     </div>
   );
 }

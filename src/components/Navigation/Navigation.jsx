@@ -11,6 +11,9 @@ function NavigationNotes() {
         <Link to="/add">
           <h2>Add Form</h2>
         </Link>
+        <Link to="/arsip">
+          <h2>Arsip Catatan</h2>
+        </Link>
       </div>
     </div>
   );

@@ -41,7 +41,6 @@ class NoteFormInput extends React.Component {
   onSubmitCatatanHandler(event) {
     event.preventDefault();
     this.props.addCatatan(this.state);
-    console.log(this.state);
   }
 
   render() {
