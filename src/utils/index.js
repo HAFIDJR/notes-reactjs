@@ -127,6 +127,13 @@ const showFormattedDate = (date) => {
   return new Date(date).toLocaleDateString("id-ID", options);
 };
 
+
+function searchNotes(keyword,archived) {
+  return notes.filter((note) =>
+    note.title.toLowerCase().includes(keyword.toLowerCase()) && note.archived == archived
+  );
+}
+
 export {
   getAllNotes,
   getActiveNotes,
@@ -138,4 +145,5 @@ export {
   unarchiveNote,
   addNote,
   showFormattedDate,
+  searchNotes
 };

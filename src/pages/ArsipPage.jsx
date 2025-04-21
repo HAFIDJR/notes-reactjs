@@ -2,27 +2,36 @@ import React from "react";
 import { getArchivedNotes, deleteNote, unarchiveNote } from "../utils/index";
 import ActiveNotesArchiveList from "../components/ArsipCatatan/ActiveNotesArchiveList";
 import NoteArchiveTitle from "../components/ArsipCatatan/NoteArchiveTitle";
+import SearchInput from "../components/Navigation/SearchInput";
+import { getAllNotes, searchNotes } from "../utils/index";
 
 class ArsipPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      note: getArchivedNotes(),
+      catatan: getArchivedNotes(),
     };
+    this.onSearch = this.onSearch.bind(this);
   }
+
+  onSearch(keyword, arsip) {
+    const hasil = keyword === "" ? getAllNotes() : searchNotes(keyword, arsip);
+    this.setState(() => ({
+      catatan: hasil,
+    }));
+  }
+
   render() {
-    if (!this.state.note) {
+    if (!this.state.catatan) {
       return <h4 data-text="Opps! Page not found">Opps! Page not found</h4>;
     }
-    console.log(this.state.note);
     return (
       <div className="note-app__body">
         <NoteArchiveTitle />
+        <SearchInput search={this.onSearch} onArsip={true} />
         <ActiveNotesArchiveList
-          catatan={this.state.note}
-          onArsip={this.onUnarsipCatatan}
-          onDelete={this.onDeleteCatatan}
+          catatan={this.state.catatan}
         />
       </div>
     );

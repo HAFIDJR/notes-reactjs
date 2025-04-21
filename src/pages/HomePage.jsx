@@ -1,10 +1,8 @@
 import React from "react";
-import { getAllNotes } from "../utils/index";
+import { getAllNotes, searchNotes } from "../utils/index";
 import SearchInput from "../components/Navigation/SearchInput";
 import ListTitle from "../components/ListCatatan/ListTitle";
 import ActiveNotesList from "../components/ListCatatan/ActiveNotesList";
-import { Route, Routes } from "react-router-dom";
-import AddPage from "./AddPage";
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -12,9 +10,17 @@ class HomePage extends React.Component {
 
     this.state = {
       catatan: getAllNotes(),
-      judul: "",
-      catatanUpdate: [],
     };
+
+    this.onSearch = this.onSearch.bind(this);
+  }
+
+  onSearch(keyword,arsip) {
+    const hasil = keyword === "" ? getAllNotes() : searchNotes(keyword,arsip);
+    this.setState(() => ({
+      catatan: hasil,
+    }));
+
   }
 
   render() {
@@ -22,10 +28,7 @@ class HomePage extends React.Component {
       <div>
         <div className="note-app__body">
           <ListTitle />
-          {/* <SearchInput
-            judul={this.state.judul}
-            onJudulSearchChange={this.onJudulSearchChange}
-          /> */}
+          <SearchInput search={this.onSearch} onArsip={false} />
           <ActiveNotesList
             catatan={this.state.catatan}
             onDelete={this.onDeleteCatatan}

@@ -1,14 +1,11 @@
 import React from "react";
 import ActiveArchiveNotesBody from "./ActiveArchiveBody";
-import ActionArchiveNotes from "./ActionAcrhiveNote";
 
 function ListCatatanArchiveItem({
   id,
   body,
   createdAt,
-  title,
-  onArsip,
-  onDelete,
+  title
 }) {
   return (
     <div className="note-item ">
