@@ -1,11 +1,5 @@
 import React from "react";
 import { getAllNotes } from "../../utils/index";
-import ListTitle from "./ListTitle";
-import ActiveNotesList from "./ActiveNotesList";
-import NoteFormInput from "../FormCatatan/NoteFormInput";
-import NoteArchiveTitle from "../ArsipCatatan/NoteArchiveTitle";
-import ActiveNotesArchiveList from "../ArsipCatatan/ActiveNotesArchiveList";
-import SearchInput from "../Navigation/SearchInput";
 import HomePage from "../../pages/HomePage";
 import AddPage from "../../pages/AddPage";
 import { Route, Routes } from "react-router-dom";
