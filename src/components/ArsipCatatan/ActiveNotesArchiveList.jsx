@@ -16,8 +16,6 @@ function ActiveNotesArchiveList({ catatan, onArsip, onDelete }) {
               title={value.title}
               body={value.body}
               createdAt={showFormattedDate(value.createdAt)}
-              onArsip={onArsip}
-              onDelete={onDelete}
             />
           ))
       )}

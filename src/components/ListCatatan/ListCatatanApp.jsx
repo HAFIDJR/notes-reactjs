@@ -12,6 +12,7 @@ import { Route, Routes } from "react-router-dom";
 import NavigationNotes from "../Navigation/Navigation";
 import DetailNoteWrapper from "../../pages/DetailNotePage";
 import ArsipPage from "../../pages/ArsipPage";
+import NotFound from "../DetailCatatan/NotFound";
 
 class ListCatatanApp extends React.Component {
   constructor(props) {
@@ -97,21 +98,6 @@ class ListCatatanApp extends React.Component {
   render() {
     return (
       <div>
-        {/* <div className="note-app__body">
-          <NoteFormInput addCatatan={this.onAddCatatanHandler} />
-          <ListTitle />
-          <ActiveNotesList
-            catatan={this.state.catatan}
-            onDelete={this.onDeleteCatatan}
-            onArsip={this.onArsipCatatan}
-          />
-          <NoteArchiveTitle />
-          <ActiveNotesArchiveList
-            catatan={this.state.catatan}
-            onDelete={this.onDeleteCatatan}
-            onArsip={this.onArsipCatatan}
-          />
-        </div> */}
         <NavigationNotes />
         <main>
           <Routes>
@@ -119,6 +105,8 @@ class ListCatatanApp extends React.Component {
             <Route path="/add" element={<AddPage />} />
             <Route path="/note/:id" element={<DetailNoteWrapper />} />
             <Route path="/arsip" element={<ArsipPage />} />
+
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
       </div>
