@@ -1,7 +1,9 @@
 import React from "react";
 import ListCatatanArchiveItem from "./ListArchiveNote";
-import { showFormattedDate } from "../../utils/index";
-function ActiveNotesArchiveList({ catatan, onArsip, onDelete }) {
+import { archiveNote, showFormattedDate } from "../../utils/index";
+import PropTypes from "prop-types";
+
+function ActiveNotesArchiveList({ catatan }) {
   return (
     <div className="notes-list">
       {catatan.length == 0 ? (
@@ -22,4 +24,15 @@ function ActiveNotesArchiveList({ catatan, onArsip, onDelete }) {
     </div>
   );
 }
+
+ActiveNotesArchiveList.propTypes = {
+  catatan: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      body: PropTypes.string.isRequired,
+      createdAt: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 export default ActiveNotesArchiveList;

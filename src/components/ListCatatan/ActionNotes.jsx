@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 function ActionNotes({ id, onDelete, onArsip }) {
   return (
     <div className="note-item__action">
@@ -12,9 +12,13 @@ function ActionNotes({ id, onDelete, onArsip }) {
       >
         Arsipkan
       </button>
-      {/* button */}
     </div>
   );
 }
+ActionNotes.propTypes = {
+  id: PropTypes.string.isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onArsip: PropTypes.func.isRequired,
+};
 
 export default ActionNotes;

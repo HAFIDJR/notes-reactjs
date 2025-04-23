@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-function ActiveArchiveNotesBody({ id ,title, body, createdAt }) {
+function ActiveArchiveNotesBody({ id, title, body, createdAt }) {
   return (
     <div className="note-item__content">
       <h1 className="note-item__title">
@@ -12,5 +13,12 @@ function ActiveArchiveNotesBody({ id ,title, body, createdAt }) {
     </div>
   );
 }
+
+ActiveArchiveNotesBody.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  createdAt: PropTypes.string.isRequired,
+};
 
 export default ActiveArchiveNotesBody;

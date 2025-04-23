@@ -99,7 +99,6 @@ class ListCatatanApp extends React.Component {
             <Route path="/add" element={<AddPage />} />
             <Route path="/note/:id" element={<DetailNoteWrapper />} />
             <Route path="/arsip" element={<ArsipPage />} />
-
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

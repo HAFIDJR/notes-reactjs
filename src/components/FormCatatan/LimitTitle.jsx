@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 function LimitTitle({ limit }) {
@@ -7,5 +8,9 @@ function LimitTitle({ limit }) {
     </div>
   );
 }
+
+LimitTitle.propTypes = {
+  limit: PropTypes.string.isRequired,
+};
 
 export default LimitTitle;

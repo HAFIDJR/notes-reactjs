@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function ActionArchiveNotes({ id, onDelete, onArsip }) {
   return (
@@ -15,5 +16,11 @@ function ActionArchiveNotes({ id, onDelete, onArsip }) {
     </div>
   );
 }
+
+ActionArchiveNotes.propTypes = {
+  id: PropTypes.string.isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onArsip: PropTypes.func.isRequired,
+};
 
 export default ActionArchiveNotes;
