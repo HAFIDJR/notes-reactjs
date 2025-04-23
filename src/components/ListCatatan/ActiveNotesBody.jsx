@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function ActiveNotesBody({ id, title, body, createdAt }) {
   return (
@@ -12,5 +13,13 @@ function ActiveNotesBody({ id, title, body, createdAt }) {
     </div>
   );
 }
+
+ActiveNotesBody.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  createdAt: PropTypes.string.isRequired,
+};
+
 
 export default ActiveNotesBody;
