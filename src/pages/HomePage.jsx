@@ -29,6 +29,7 @@ class HomePage extends React.Component {
 
   onSearch(keyword, arsip) {
     const hasil = keyword === "" ? getAllNotes() : searchNotes(keyword, arsip);
+    
     this.setState(() => ({
       catatan: hasil,
     }));
